@@ -6,21 +6,25 @@ class Program
     {
         Job job1 = new Job();
 
-        job1._company = "3form";
+        job1._company = "Mass Construction";
         job1._jobTitle = "Sales Coordinator";
         job1._startYear = 2014;
         job1._endYear = 2017;
-        job1.Display();
 
         Job job2 = new Job();
 
-        job2._company = "Lowe's";
-        job2._jobTitle = "Kitchen and Bath Designer";
+        job2._company = "Allwood Landscaping";
+        job2._jobTitle = "Gardener";
         job2._startYear = 2006;
         job2._endYear = 2012;
-        job2.Display();
-        
 
+        Resume myResume = new Resume();
+        myResume._name = "Melvin McLovin";
+
+        myResume._jobs.Add(job1);
+        myResume._jobs.Add(job2);
+
+        myResume.Display();
 
     }
 }
