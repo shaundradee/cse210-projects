@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 
 public class Word
 {
@@ -30,7 +31,7 @@ public class Word
     {
         if (_isHidden)
         {
-            return "____";
+            return new String('_', _text.Length);
         }
         else
         {

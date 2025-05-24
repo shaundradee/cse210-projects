@@ -29,12 +29,11 @@ public class Scripture
             }
         }
 
-        // Step 2: Shuffle the visible words randomly
         Random random = new Random();
 
-        // Step 3: Hide 'numberToHide' words
+        // Hide 'numberToHide' words
         int wordsToHide = Math.Min(numberToHide, visibleWords.Count);
-        for (int i = 0; i <= wordsToHide; i++)
+        for (int i = 0; i < wordsToHide; i++)
         {
             int index = random.Next(visibleWords.Count);
             visibleWords[index].Hide();
@@ -62,7 +61,7 @@ public class Scripture
                 return false;
             }
         }
-        return true;
-    
+        return true; //location..?
+
     }
 }
