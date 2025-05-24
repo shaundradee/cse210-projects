@@ -6,14 +6,15 @@ class Program
     static void Main(string[] args)
     {
         ScriptureLoader loader = new ScriptureLoader();
-        string filePath = "scriptures.txt";
+        string filePath = "scriptureList.txt";
         Scripture scripture = loader.LoadRandomScripture(filePath);
 
-        while (scripture.IsCompletelyHidden() != true)
+        Console.Clear();
+        Console.WriteLine($"{scripture.GetDisplayText()}");
+        Console.WriteLine();
+
+        do
         {
-            Console.Clear();
-            Console.WriteLine($"{scripture.GetDisplayText()}");
-            Console.WriteLine();
             Console.WriteLine("Press enter to continue or type 'quit' to finish.");
             string input = Console.ReadLine();
 
@@ -25,6 +26,11 @@ class Program
             {
                 scripture.HideRandomWords(3);
             }
-        }
+            Console.Clear();
+            Console.WriteLine($"{scripture.GetDisplayText()}");
+            Console.WriteLine();
+
+        } while (scripture.IsCompletelyHidden() != true);
+
     }
 }
