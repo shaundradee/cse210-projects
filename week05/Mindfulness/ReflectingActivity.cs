@@ -43,21 +43,6 @@ public class ReflectingActivity : Activity
         return _prompts[index];
     }
 
-    // public string GetRandomQuestion()
-    // {
-    //     int index = _random.Next(_questions.Count);
-    //     return _questions[index];
-    // }
-
-    // public void DisplayRandomPrompt()
-    // {
-    //     Console.WriteLine(GetRandomPrompt());
-    // }
-
-    // public void DisplayRandomQuestion()
-    // {
-    //     Console.WriteLine(GetRandomQuestion());
-    // }
 
     public List<string> GetShuffledQuestions()
     {
@@ -76,24 +61,6 @@ public class ReflectingActivity : Activity
         return shuffled;
     }
 
-    // public void RunReflectingActivity()
-    // {
-    //     Console.Write("Activity starting in... ");
-    //     CountDown();
-    //     Console.WriteLine();
-    //     GetRandomPrompt();
-    //     PauseAnimation();
-
-    //     DateTime start = DateTime.Now;
-    //     DateTime end = start.AddSeconds(GetDuration());
-
-    //     while (DateTime.Now < end)
-    //     {
-    //         DisplayRandomQuestion();
-    //         PauseAnimation();
-    //     }
-
-    // }
     public void RunReflectingActivity()
     {
         Console.Write("Starting in... ");
