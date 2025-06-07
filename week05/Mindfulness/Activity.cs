@@ -52,7 +52,7 @@ public class Activity
         {
             Console.Write(spinner[index]);
             Thread.Sleep(500);
-            Console.Write("\b \b");
+            Console.Write("\b");
             index = (index + 1) % spinner.Length;
         }
     }
@@ -62,7 +62,7 @@ public class Activity
         {
             Console.Write(i);
             Thread.Sleep(1000);
-            Console.Write("\b \b");
+            Console.Write("\b");
         }
     }
 

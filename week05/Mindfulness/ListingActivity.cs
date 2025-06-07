@@ -4,8 +4,6 @@ public class ListingActivity : Activity
 {
     private List<string> _prompts = new List<string>();
     private int _count;
-    private List<string> _inputs = new List<string>();
-    private static Random _random = new Random();
 
     public ListingActivity() : base("Listing Activity", "This activity will help you reflect on the good things in your life by guiding you to list as many items as you can within a specific area.")
     {
@@ -25,23 +23,9 @@ public class ListingActivity : Activity
 
     public string GetRandomListingPrompt()
     {
-        int index = _random.Next(_prompts.Count);
+        var random = new Random();
+        int index = random.Next(_prompts.Count);
         return _prompts[index];
-    }
-
-    // public void DisplayRandomListingPrompt()
-    // {
-    //     Console.WriteLine(GetRandomListingPrompt());
-    // }
-
-    public int GetUserResponses()
-    {
-        _count = _inputs.Count;
-        // foreach (string input in _inputs)
-        // {
-        //     Console.WriteLine(input);
-        // }
-        return _count;
     }
 
     public void RunListingActivity()
@@ -58,12 +42,14 @@ public class ListingActivity : Activity
 
         Console.WriteLine("Begin Listing.");
 
+        _count = 0;
+
         while (DateTime.Now < end)
         {
             string input = Console.ReadLine();
-            _inputs.Add(input);
+            _count ++;
         }
-        Console.WriteLine($"\nAwesome! You entered {GetUserResponses()} entries!");
+        Console.WriteLine($"\nAwesome! You entered {_count} entries!");
         Console.WriteLine("\n--------------------------\n");
     }
 

@@ -13,32 +13,36 @@ class Program
             Console.WriteLine("Menu Options:");
             Console.WriteLine(" 1. Breathing Activity \n 2. Reflection Activity \n 3. Listing Activity \n 4. Quit");
             Console.Write("Select an option from the menu: ");
-            selectedOpt = int.Parse(Console.ReadLine());
+            bool option = int.TryParse(Console.ReadLine(), out selectedOpt);
 
-            if (selectedOpt == 1)
-            {
-                BreathingActivity breathe = new BreathingActivity();
-                breathe.DisplayStartMessage();
-                breathe.SetDuration();
-                breathe.RunBreathingActivity();
-                breathe.DisplayEndMessage();
-            }
-            else if (selectedOpt == 2)
-            {
-                ReflectingActivity reflect = new ReflectingActivity();
-                reflect.DisplayStartMessage();
-                reflect.SetDuration();
-                reflect.RunReflectingActivity();
-                reflect.DisplayEndMessage();
-            }
-            else if (selectedOpt == 3)
-            {
-                ListingActivity listing = new ListingActivity();
-                listing.DisplayStartMessage();
-                listing.SetDuration();
-                listing.RunListingActivity();
-                listing.DisplayEndMessage();
-            }
+                if (selectedOpt == 1)
+                {
+                    BreathingActivity breathe = new BreathingActivity();
+                    breathe.DisplayStartMessage();
+                    breathe.SetDuration();
+                    breathe.RunBreathingActivity();
+                    breathe.DisplayEndMessage();
+                }
+                else if (selectedOpt == 2)
+                {
+                    ReflectingActivity reflect = new ReflectingActivity();
+                    reflect.DisplayStartMessage();
+                    reflect.SetDuration();
+                    reflect.RunReflectingActivity();
+                    reflect.DisplayEndMessage();
+                }
+                else if (selectedOpt == 3)
+                {
+                    ListingActivity listing = new ListingActivity();
+                    listing.DisplayStartMessage();
+                    listing.SetDuration();
+                    listing.RunListingActivity();
+                    listing.DisplayEndMessage();
+                }
+                else
+                {
+                    Console.WriteLine("\n*********************\nError: Entry is not a numerical option. Please try again.\n*********************\n");   
+                }
         }
         Console.WriteLine("Thanks for practicing mindfulness! Come back any time you need a moment to reset.\n");
 
