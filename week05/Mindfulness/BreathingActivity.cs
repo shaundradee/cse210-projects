@@ -15,7 +15,7 @@ public class BreathingActivity : Activity
         {
             Console.Write(i);
             Thread.Sleep(1000);
-            Console.Write("\b");
+            Console.Write("\b \b");
         }
     }
     public void HoldCountDown()
@@ -32,7 +32,7 @@ public class BreathingActivity : Activity
         {
             Console.Write(i);
             Thread.Sleep(1000);
-            Console.Write("\b");
+            Console.Write("\b \b");
         }
     }
     public void RunBreathingActivity()
