@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the EternalQuest Project.");
+        GoalManager g1 = new GoalManager();
+        g1.Start();
+        Console.WriteLine("Thanks for visiting the Eternal Quest! Hope to see you again soon!");
     }
 }
