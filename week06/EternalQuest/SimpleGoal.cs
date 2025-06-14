@@ -13,7 +13,7 @@ public class SimpleGoal : Goal
     {
         _isComplete = true;
         //also need to add points to current score tally
-        Console.WriteLine($"Congratulaions! You completed your goal! What a Rockstar! {GetPoints()} points will be added to your total!");
+        Console.WriteLine($"Congratulaions! That's one solid milestone complete. One step closer to your bigger vision. {GetPoints()} points will be added to your total!");
 
     }
 

@@ -7,8 +7,8 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-        //maybe add a true bool here ...current score + points
-        Console.WriteLine($"Congratulaions! You did it again! Keep it up! {GetPoints()} points will be added to your total!");
+        //maybe add a true bool here ...current score + points... random string for message?
+        Console.WriteLine($"Eternal progress made! {GetPoints()} points earned — your journey continues...");
     }
 
     public override bool IsComplete()
@@ -22,3 +22,15 @@ public class EternalGoal : Goal
     }
 
 }
+
+
+// string[] messages = {
+//     "Another step forward on your eternal journey! Keep it up!",
+//     "Your dedication is blooming beautifully. Keep nurturing this goal!",
+//     "Your streak is alive! You earned more points — keep going!",
+//     "Small acts, big results. You're doing great!",
+//     "Eternal doesn’t mean impossible — just limitless. You’re thriving!"
+// };
+
+// Random rand = new Random();
+// Console.WriteLine(messages[rand.Next(messages.Length)]);

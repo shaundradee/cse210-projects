@@ -155,7 +155,7 @@ public class GoalManager
     {
         Console.Write("Enter filename to save: ");
         string filename = Console.ReadLine();
-        //needs to load to a file. 
+        //needs to load to a file and update if existing. 
     }
 
     public void RecordEvent()
@@ -165,6 +165,8 @@ public class GoalManager
         int goalNum = int.Parse(Console.ReadLine());
         //need to know how to capture type... index through list somehow
         //will need to complete sub classes methods for recording 
+        //need to update _score, too
+        //maybe the sub class RecordEvent() methods are just meant for Console.Write
     }
     public void LoadGoals()
     {

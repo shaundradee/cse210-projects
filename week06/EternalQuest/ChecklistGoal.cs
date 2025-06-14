@@ -19,9 +19,9 @@ public class ChecklistGoal : Goal
         _amountComplete++;
         //???? -not sure how this will be used yet... 
         // if (_amountComplete >= _target)
-        //     return GetPoints() + _bonus;
+        //     return GetPoints() + _bonus; or Console.WriteLine("💫 Your dedication paid off — goal complete! Your bonus points are dancing their way into your total!")
         // else
-        //     return GetPoints();
+        //     return GetPoints(); or Console.WriteLine("Nice Work! One step closer to completion, Quest Master!")
     }
 
     public override bool IsComplete()
