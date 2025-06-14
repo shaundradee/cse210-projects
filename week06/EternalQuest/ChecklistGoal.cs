@@ -17,11 +17,6 @@ public class ChecklistGoal : Goal
     public override void RecordEvent()
     {
         _amountComplete++;
-        //???? -not sure how this will be used yet... 
-        // if (_amountComplete >= _target)
-        //     return GetPoints() + _bonus; or Console.WriteLine("💫 Your dedication paid off — goal complete! Your bonus points are dancing their way into your total!")
-        // else
-        //     return GetPoints(); or Console.WriteLine("Nice Work! One step closer to completion, Quest Master!")
     }
 
     public override bool IsComplete()
@@ -29,6 +24,17 @@ public class ChecklistGoal : Goal
         return _amountComplete >= _target;
     }
 
+    public override int UpdateScore()
+    {
+        if (IsComplete() && _amountComplete == _target)
+        {
+            return _bonus + GetPoints();
+        }
+        else
+        {
+            return GetPoints();
+        }
+    }
     public override string GetDetailsString()
     {
         return $"[{(IsComplete() ? "X" : " ")}] {GetShortName()} ({GetDescription()}) -- Completed {_amountComplete}/{_target}";
@@ -36,7 +42,7 @@ public class ChecklistGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"ChecklistGoal|{GetShortName()}|{GetDescription()}|{GetPoints}|{_bonus}|{_target}|{_amountComplete}";
+        return $"ChecklistGoal|{GetShortName()}|{GetDescription()}|{GetPoints()}|{_bonus}|{_target}|{_amountComplete}";
     }
 
 }

@@ -7,13 +7,17 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-        //maybe add a true bool here ...current score + points... random string for message?
-        Console.WriteLine($"Eternal progress made! {GetPoints()} points earned — your journey continues...");
+        IsComplete();
+    }
+
+        public override int UpdateScore()
+    {
+        return GetPoints();
     }
 
     public override bool IsComplete()
     {
-        //need to return a condition for bool... or just return as true? Goal is supposed to be continuous.
+        return false;
     }
 
     public override string GetStringRepresentation()
@@ -21,16 +25,25 @@ public class EternalGoal : Goal
         return $"EternalGoal|{GetShortName()}|{GetDescription()}|{GetPoints()}";
     }
 
+    public override string CongratsMessage()
+    {
+        string[] messages = {
+            "Another step forward on your eternal journey! Keep it up!",
+            "Your dedication is blooming beautifully. Keep nurturing this goal!",
+            "Your streak is alive! You earned more points — keep going!",
+            "Small acts, big results. You're doing great!",
+            "You're showing up even when it's hard. That's power.",
+            "Eternal doesn't mean impossible — just limitless. You're thriving!",
+            "Eternal progress made! More points earned — your journey continues...",
+            "Discipline > motivation — and you've got both.",
+            "You're gaining XP every day you show up.",
+            "One drop at a time... before you know it, your bucket will be filled.",
+            "GOAL REPEAT ALERT! Someone's in beast mode today."
+        };
+
+        Random rand = new Random();
+        return messages[rand.Next(messages.Length)];
+    }
 }
 
 
-// string[] messages = {
-//     "Another step forward on your eternal journey! Keep it up!",
-//     "Your dedication is blooming beautifully. Keep nurturing this goal!",
-//     "Your streak is alive! You earned more points — keep going!",
-//     "Small acts, big results. You're doing great!",
-//     "Eternal doesn’t mean impossible — just limitless. You’re thriving!"
-// };
-
-// Random rand = new Random();
-// Console.WriteLine(messages[rand.Next(messages.Length)]);

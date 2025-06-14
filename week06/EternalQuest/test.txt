@@ -1,0 +1,4 @@
+86
+EternalGoal|Read a chapter|Take time for self to read|20
+ChecklistGoal|Exercise|15 min walk a day for a week|10|100|10|2
+SimpleGoal|Clean out clothes|go through girls clothes|50|True
